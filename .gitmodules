@@ -1,3 +1,6 @@
 [submodule "glfw"]
 	path = vendor/glfw
 	url = git@github.com:derkaczda-forks/glfw.git
+[submodule "vendor/glm"]
+	path = vendor/glm
+	url = git@github.com:derkaczda-forks/glm.git
