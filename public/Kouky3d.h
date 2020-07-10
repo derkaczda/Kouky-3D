@@ -1,3 +1,3 @@
-#include "../src/Kouky3d_private.h"
+#include "../src/Test/Test.h"
 
 void testPrint();

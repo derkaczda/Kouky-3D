@@ -1,20 +1,19 @@
 
+#include "Test/Test.h"
 #include <iostream>
-#include "../public/Kouky3d.h"
 
 #define STRINGIFY(x) #x
 
 void testPrint_impl()
 {
-    std::cout << "Version "  << STRINGIFY(KOUKY_3D_VERSION_MAJOR) << "." << STRINGIFY(KOUKY_3D_VERSION_MINOR) << std::endl;
 }
 
 void testPrint()
 {
-    testPrint_impl();
+    std::cout << "before basic function call" << std::endl;
+    Kouky3d::basicFunctionCall();
 }
 
 void anotherTest()
 {
-    std::cout << "anotherTest" << std::endl;
 }

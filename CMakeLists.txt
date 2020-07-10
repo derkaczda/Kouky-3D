@@ -6,23 +6,28 @@ project(Kouky3d VERSION 0.1)
 set(CMAK_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# add the library
-add_library(Kouky3d STATIC src/Kouky3dMain.cpp)
+set(HEADER_FILES
+    src/Test/Test.h
+)
 
-set(INCLUDE_DIR
+set(SOURCE_FILES
+    src/Kouky3dMain.cpp
+    src/Test/Test.cpp
+)
+
+set(PUBLIC_FILES
     public
 )
 
-set(PRIVATE_DIR
-    src/Kouky3dConfig.h,
-    src/Kouky3d_private.h
-)
+# add the library
+add_library(Kouky3d STATIC ${SOURCE_FILES})
+
 
 target_include_directories(Kouky3d 
     PUBLIC
-        ${INCLUDE_DIR}
+        ${PUBLIC_FILES}
     PRIVATE
-        ${PRIVATE_DIR}
+        ${HEADER_FILES}
 )
 
 add_subdirectory(vendor/glfw)
