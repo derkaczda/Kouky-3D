@@ -1,0 +1,3 @@
+// the configured options and settings for Kouky 3d
+#define KOUKY_3D_VERSION_MAJOR @KOUKY_3D_VERSION_MAJOR@
+#define KOUKY_3D_VERSION_MINOR @KOUKY_3D_VERSION_MINOR@
