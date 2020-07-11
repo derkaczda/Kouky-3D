@@ -8,11 +8,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 set(HEADER_FILES
     src/Test/Test.h
+    src/Window.h
 )
 
 set(SOURCE_FILES
     src/Kouky3d.cpp
     src/Test/Test.cpp
+    src/Window.cpp
 )
 
 set(PUBLIC_FILES
