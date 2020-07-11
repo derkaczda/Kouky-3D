@@ -1,19 +1,30 @@
-
-#include "Test/Test.h"
+#include <glad/glad.h>
+#include <glfw/glfw3.h>
 #include <iostream>
+#include <functional>
 
-#define STRINGIFY(x) #x
+#include "../public/Kouky3d.h"
 
-void testPrint_impl()
+static void GLFWErrorCallback(int error, const char* description)
 {
+    std::cout << error << " " << description << std::endl;
 }
 
-void testPrint()
+void showWindow()
 {
-    std::cout << "before basic function call" << std::endl;
-    Kouky3d::basicFunctionCall();
-}
 
-void anotherTest()
-{
+    int success = glfwInit();
+    glfwSetErrorCallback(GLFWErrorCallback);
+
+    GLFWwindow* window = glfwCreateWindow(800, 600, "Kouky 3d", nullptr, nullptr);
+
+    glfwMakeContextCurrent(window);
+    int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+
+    while(true)
+    {
+        glfwPollEvents();
+    }
+
+    delete window;
 }
