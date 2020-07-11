@@ -10,13 +10,13 @@ static void GLFWErrorCallback(int error, const char* description)
     std::cout << error << " " << description << std::endl;
 }
 
-void showWindow()
+void showWindow(const char* title)
 {
 
     int success = glfwInit();
     glfwSetErrorCallback(GLFWErrorCallback);
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Kouky 3d", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(800, 600, title, nullptr, nullptr);
 
     glfwMakeContextCurrent(window);
     int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);

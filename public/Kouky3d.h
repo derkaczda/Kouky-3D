@@ -1,3 +1,3 @@
 #include "../src/Test/Test.h"
 
-void showWindow();
+void showWindow(const char* title);
