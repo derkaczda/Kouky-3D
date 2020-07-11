@@ -22,6 +22,13 @@ set(PUBLIC_FILES
 # add the library
 add_library(Kouky3d STATIC ${SOURCE_FILES})
 
+target_link_libraries(Kouky3d
+    PRIVATE
+        glfw
+        glm
+        glad
+)
+
 
 target_include_directories(Kouky3d 
     PUBLIC
@@ -32,3 +39,4 @@ target_include_directories(Kouky3d
 
 add_subdirectory(vendor/glfw)
 add_subdirectory(vendor/glm)
+add_subdirectory(vendor/glad)
