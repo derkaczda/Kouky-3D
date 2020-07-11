@@ -11,7 +11,7 @@ set(HEADER_FILES
 )
 
 set(SOURCE_FILES
-    src/Kouky3dMain.cpp
+    src/Kouky3d.cpp
     src/Test/Test.cpp
 )
 

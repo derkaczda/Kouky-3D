@@ -20,9 +20,13 @@ void showWindow(const char* title)
 
     glfwMakeContextCurrent(window);
     int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-
     while(true)
     {
+
+        glClearColor(0.0f, 1.0f, 1.0f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
