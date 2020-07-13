@@ -39,10 +39,6 @@ namespace Kouky3d
     void Window::Show()
     {
         glfwShowWindow(m_windowHandle);
-        while(true)
-        {
-            glfwPollEvents();
-        }
     }
 
     void Window::Hide()
@@ -53,5 +49,10 @@ namespace Kouky3d
     void Window::GiveContext()
     {
         glfwMakeContextCurrent(m_windowHandle);
+    }
+
+    void Window::OnUpdate()
+    {
+        glfwPollEvents();
     }
 }

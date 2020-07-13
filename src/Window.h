@@ -20,6 +20,8 @@ namespace Kouky3d
         void Show();
         void Hide();
 
+        void OnUpdate();
+
         void GiveContext();
 
         inline bool HasContext() { return m_hasContext; }
