@@ -54,5 +54,6 @@ namespace Kouky3d
     void Window::OnUpdate()
     {
         glfwPollEvents();
+        glfwSwapBuffers(m_windowHandle);
     }
 }
