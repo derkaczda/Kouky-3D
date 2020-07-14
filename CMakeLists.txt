@@ -11,6 +11,7 @@ set(HEADER_FILES
     src/Render/Renderer.h
     src/Render/VertexArray.h
     src/Render/VertexBuffer.h
+    src/Render/Shader.h
     src/Kouky3dConfig.h
 )
 
@@ -20,6 +21,7 @@ set(SOURCE_FILES
     src/Render/Renderer.cpp
     src/Render/VertexArray.cpp
     src/Render/VertexBuffer.cpp
+    src/Render/Shader.cpp
 )
 
 set(PUBLIC_FILES
