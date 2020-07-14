@@ -9,16 +9,6 @@
 
 namespace Kouky3d
 {
-    void setClearColor(float r, float g, float b, float a)
-    {
-        glClearColor(r,g,b,a);
-    }
-
-    void clear()
-    {
-        glClear(GL_COLOR_BUFFER_BIT);
-    }
-
     std::string Version()
     {
         std::string s;
