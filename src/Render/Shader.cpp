@@ -8,6 +8,7 @@ namespace Kouky3d
     {
         // TODO: move code into different methods
         // TODO: collect all sources and compile them at once
+        // TODO: create shaders from different Vertex/Fragment shader objects? So shader is just a wrapper
         unsigned int vertexShader;
         vertexShader = glCreateShader(GL_VERTEX_SHADER);
         const GLchar *sourceCStr = vertexSource.c_str();
@@ -49,7 +50,7 @@ namespace Kouky3d
 
     Shader::~Shader()
     {
-
+        // TODO: delete shader program correctly
     }
 
     void Shader::Bind()
@@ -64,11 +65,13 @@ namespace Kouky3d
 
     bool Shader::Compile()
     {
+        // TODO: move compile code into here
         return true;
     }
 
     bool Shader::Link()
     {
+        // TODO: move link code into here
         return true;
     }
 }

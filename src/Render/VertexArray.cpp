@@ -13,7 +13,7 @@ namespace Kouky3d
 
     VertexArray::~VertexArray()
     {
-
+        // TODO: delete vertex array
     }
 
     void VertexArray::Bind()

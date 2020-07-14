@@ -19,7 +19,7 @@ namespace Kouky3d
 
     Window::~Window()
     {
-
+        // TODO: delete window correctly
     }
 
     void Window::Init(bool switchContext)

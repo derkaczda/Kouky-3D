@@ -15,7 +15,7 @@ namespace Kouky3d
 
     VertexBuffer::~VertexBuffer()
     {
-
+        // TODO: delete vertex buffer correctly
     }
 
     void VertexBuffer::Bind()
