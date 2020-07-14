@@ -7,7 +7,6 @@ set(CMAK_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 set(HEADER_FILES
-    src/Test/Test.h
     src/Window.h
     src/VertexArray.h
     src/VertexBuffer.h
@@ -16,7 +15,6 @@ set(HEADER_FILES
 
 set(SOURCE_FILES
     src/Kouky3d.cpp
-    src/Test/Test.cpp
     src/Window.cpp
     src/VertexArray.cpp
     src/VertexBuffer.cpp
