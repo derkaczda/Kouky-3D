@@ -9,12 +9,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(HEADER_FILES
     src/Test/Test.h
     src/Window.h
+    src/VertexArray.h
+    src/VertexBuffer.h
 )
 
 set(SOURCE_FILES
     src/Kouky3d.cpp
     src/Test/Test.cpp
     src/Window.cpp
+    src/VertexArray.cpp
+    src/VertexBuffer.cpp
 )
 
 set(PUBLIC_FILES
