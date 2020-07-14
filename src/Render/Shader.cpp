@@ -6,6 +6,8 @@ namespace Kouky3d
 {
     Shader::Shader(const std::string& vertexSource, const std::string& fragmentSource)
     {
+        // TODO: move code into different methods
+        // TODO: collect all sources and compile them at once
         unsigned int vertexShader;
         vertexShader = glCreateShader(GL_VERTEX_SHADER);
         const GLchar *sourceCStr = vertexSource.c_str();
