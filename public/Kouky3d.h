@@ -1,6 +1,6 @@
 #include "../src/Window.h"
-#include "../src/VertexBuffer.h"
-#include "../src/VertexArray.h"
+#include "../src/Render/VertexBuffer.h"
+#include "../src/Render/VertexArray.h"
 
 namespace Kouky3d
 {
