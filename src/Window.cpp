@@ -31,7 +31,6 @@ namespace Kouky3d
             if(switchContext)
             {
                 GiveContext();
-                gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
             }
         }
     }
@@ -53,7 +52,7 @@ namespace Kouky3d
 
     void Window::OnUpdate()
     {
-        glfwPollEvents();
         glfwSwapBuffers(m_windowHandle);
+        glfwPollEvents();
     }
 }
