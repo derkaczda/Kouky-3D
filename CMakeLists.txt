@@ -11,6 +11,7 @@ set(HEADER_FILES
     src/Window.h
     src/VertexArray.h
     src/VertexBuffer.h
+    src/Kouky3dConfig.h
 )
 
 set(SOURCE_FILES
