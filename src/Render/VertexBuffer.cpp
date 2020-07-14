@@ -1,6 +1,5 @@
 #include "VertexBuffer.h"
 #include <glad/glad.h>
-#include <iostream>
 
 namespace Kouky3d
 {

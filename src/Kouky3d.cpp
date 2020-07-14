@@ -1,7 +1,5 @@
 #include <glad/glad.h>
 #include <glfw/glfw3.h>
-#include <iostream>
-#include <functional>
 #include <string>
 
 #include "Kouky3dConfig.h"
