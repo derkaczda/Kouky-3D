@@ -55,4 +55,21 @@ namespace Kouky3d
         glfwSwapBuffers(m_windowHandle);
         glfwPollEvents();
     }
+
+    void Window::SetPosition(glm::vec2 position)
+    {
+        SetPosition(position.x, position.y);
+    }
+
+    void Window::SetPosition(float x, float y)
+    {
+        glfwSetWindowPos(m_windowHandle, x, y);
+    }
+
+    glm::vec2 Window::GetPosition()
+    {
+        int xpos, ypos;
+        glfwGetWindowPos(m_windowHandle, &xpos, &ypos);
+        return {xpos, ypos};
+    }
 }

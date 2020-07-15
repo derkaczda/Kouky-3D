@@ -3,6 +3,8 @@
 
 #include <string>
 
+#include <glm/vec2.hpp>
+
 class GLFWwindow;
 
 namespace Kouky3d
@@ -21,6 +23,10 @@ namespace Kouky3d
         void Hide();
 
         void OnUpdate();
+
+        void SetPosition(glm::vec2 position);
+        void SetPosition(float x, float y);
+        glm::vec2 GetPosition();
 
         void GiveContext();
 
