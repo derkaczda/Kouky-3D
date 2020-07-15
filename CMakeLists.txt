@@ -6,22 +6,12 @@ project(Kouky3d VERSION 0.1)
 set(CMAK_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-set(HEADER_FILES
-    src/Window.h
-    src/Render/Renderer.h
-    src/Render/VertexArray.h
-    src/Render/VertexBuffer.h
-    src/Render/Shader.h
-    src/Kouky3dConfig.h
+file(GLOB_RECURSE HEADER_FILES
+    src/*.h
 )
 
-set(SOURCE_FILES
-    src/Kouky3d.cpp
-    src/Window.cpp
-    src/Render/Renderer.cpp
-    src/Render/VertexArray.cpp
-    src/Render/VertexBuffer.cpp
-    src/Render/Shader.cpp
+file(GLOB_RECURSE SOURCE_FILES
+    src/*.cpp
 )
 
 set(PUBLIC_FILES
