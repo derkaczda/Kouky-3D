@@ -72,4 +72,9 @@ namespace Kouky3d
         glfwGetWindowPos(m_windowHandle, &xpos, &ypos);
         return {xpos, ypos};
     }
+
+    void Window::SetTitle(const std::string& title)
+    {
+        glfwSetWindowTitle(m_windowHandle, title.c_str());
+    }
 }

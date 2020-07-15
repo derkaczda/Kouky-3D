@@ -28,6 +28,8 @@ namespace Kouky3d
         void SetPosition(float x, float y);
         glm::vec2 GetPosition();
 
+        void SetTitle(const std::string& title);
+
         void GiveContext();
 
         inline bool HasContext() { return m_hasContext; }
