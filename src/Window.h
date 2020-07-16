@@ -30,6 +30,10 @@ namespace Kouky3d
 
         void SetTitle(const std::string& title);
 
+        void SetSize(glm::vec2 size);
+        void SetSize(float widht, float height);
+        glm::vec2 GetSize();
+
         void GiveContext();
 
         inline bool HasContext() { return m_hasContext; }

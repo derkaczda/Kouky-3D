@@ -77,4 +77,21 @@ namespace Kouky3d
     {
         glfwSetWindowTitle(m_windowHandle, title.c_str());
     }
+
+    void Window::SetSize(glm::vec2 size)
+    {
+        SetSize(size.x, size.y);
+    }
+
+    void Window::SetSize(float width, float height)
+    {
+        glfwSetWindowSize(m_windowHandle, width, height);
+    }
+
+    glm::vec2 Window::GetSize()
+    {
+        int width, height;
+        glfwGetWindowSize(m_windowHandle, &width, &height);
+        return { width, height };
+    }
 }
