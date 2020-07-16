@@ -14,12 +14,12 @@ namespace Kouky3d
     Window::Window(const char* title, const int width, const int height)
         : m_title(title), m_width(width), m_height(height)
     {
-
     }
 
     Window::~Window()
     {
-        // TODO: delete window correctly
+        Shutdown();
+        delete m_windowHandle;
     }
 
     void Window::Init(bool switchContext)
@@ -33,6 +33,11 @@ namespace Kouky3d
                 GiveContext();
             }
         }
+    }
+
+    void Window::Shutdown()
+    {
+        glfwDestroyWindow(m_windowHandle);
     }
 
     void Window::Show()
@@ -52,8 +57,12 @@ namespace Kouky3d
 
     void Window::OnUpdate()
     {
-        glfwSwapBuffers(m_windowHandle);
+        // TODO: redo that with event systm
+        if (glfwWindowShouldClose(m_windowHandle))
+            Shutdown();
+
         glfwPollEvents();
+        glfwSwapBuffers(m_windowHandle);
     }
 
     void Window::SetPosition(glm::vec2 position)

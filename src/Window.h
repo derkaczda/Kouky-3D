@@ -18,6 +18,7 @@ namespace Kouky3d
         ~Window();
 
         void Init(const bool switchContext=true);
+        void Shutdown();
 
         void Show();
         void Hide();
