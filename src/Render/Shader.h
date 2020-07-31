@@ -2,6 +2,7 @@
 #define KOUKY3D_SHADER
 
 #include <string>
+#include <glm/glm.hpp>
 
 namespace Kouky3d
 {
@@ -13,6 +14,9 @@ namespace Kouky3d
 
         void Bind();
         void Unbind();
+
+        void Uniform(const std::string& name, const glm::mat4& matrix);
+        void Uniform(const std::string& name, const glm::mat3& matrix);
 
     private:
 

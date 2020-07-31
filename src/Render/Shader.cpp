@@ -2,6 +2,9 @@
 #include <glad/glad.h>
 #include <iostream>
 
+#include <glm/gtc/type_ptr.hpp>
+
+
 namespace Kouky3d
 {
     Shader::Shader(const std::string& vertexSource, const std::string& fragmentSource)
@@ -73,5 +76,17 @@ namespace Kouky3d
     {
         // TODO: move link code into here
         return true;
+    }
+
+    void Shader::Uniform(const std::string& name, const glm::mat3& matrix)
+    {
+        GLint location = glGetUniformLocation(m_program, name.c_str());
+        glUniformMatrix3fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
+    }
+
+    void Shader::Uniform(const std::string& name, const glm::mat4& matrix)
+    {
+        GLint location = glGetUniformLocation(m_program, name.c_str());
+        glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
     }
 }
