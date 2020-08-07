@@ -2,8 +2,10 @@
 #define KOUKY_WINDOW_H
 
 #include <string>
-
+#include <functional>
 #include <glm/vec2.hpp>
+
+#include "Event/Event.h"
 
 class GLFWwindow;
 
@@ -13,6 +15,8 @@ namespace Kouky3d
     class Window
     {
     public:
+
+        using WindowEventCallbackFunction = std::function<void(Event&)>;
 
         Window(const char* title, const int width, const int height);
         ~Window();
@@ -29,6 +33,7 @@ namespace Kouky3d
         void SetPosition(float x, float y);
         glm::vec2 GetPosition();
 
+
         void SetTitle(const std::string& title);
 
         void SetSize(glm::vec2 size);
@@ -37,7 +42,9 @@ namespace Kouky3d
 
         void GiveContext();
 
+
         inline bool HasContext() { return m_hasContext; }
+        inline void SetCallback(const WindowEventCallbackFunction& callback) { m_Data.callback = callback; }
 
     private:
 
@@ -47,6 +54,13 @@ namespace Kouky3d
 
         GLFWwindow* m_windowHandle;
         bool m_hasContext = false;
+
+        struct WindowData
+        {
+            WindowEventCallbackFunction callback;
+        };
+
+        WindowData m_Data;
     };
 }
 

@@ -4,6 +4,9 @@
 #include <glfw/glfw3.h>
 #include <iostream>
 
+#include "Event/WindowEvents.h"
+#include "Event/EventDispatcher.h"
+
 namespace Kouky3d
 {
     static void GLFWErrorCallback(int error, const char* description)
@@ -32,6 +35,13 @@ namespace Kouky3d
             {
                 GiveContext();
             }
+            glfwSetWindowUserPointer(m_windowHandle, &m_Data);
+
+            glfwSetWindowCloseCallback(m_windowHandle, [](GLFWwindow* window) {
+                WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+                WindowCloseEvent event;
+                data.callback(event);
+            });
         }
     }
 
@@ -57,10 +67,6 @@ namespace Kouky3d
 
     void Window::OnUpdate()
     {
-        // TODO: redo that with event systm
-        if (glfwWindowShouldClose(m_windowHandle))
-            Shutdown();
-
         glfwPollEvents();
         glfwSwapBuffers(m_windowHandle);
     }

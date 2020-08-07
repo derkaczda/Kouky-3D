@@ -4,6 +4,10 @@
 #include "../src/Render/VertexArray.h"
 #include "../src/Render/Shader.h"
 
+#include "../src/Event/Event.h"
+#include "../src/Event/WindowEvents.h"
+#include "../src/Event/EventDispatcher.h"
+
 namespace Kouky3d
 {
     std::string Version();
