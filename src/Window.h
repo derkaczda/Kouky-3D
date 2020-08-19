@@ -18,7 +18,7 @@ namespace Kouky3d
 
         using WindowEventCallbackFunction = std::function<void(Event&)>;
 
-        Window(const char* title, const int width, const int height);
+        Window(const char* title, int width, int height);
         ~Window();
 
         void Init(const bool switchContext=true);
@@ -48,15 +48,14 @@ namespace Kouky3d
 
     private:
 
-        const char* m_title;
-        const int m_width;
-        const int m_height;
-
         GLFWwindow* m_windowHandle;
         bool m_hasContext = false;
 
         struct WindowData
         {
+            const char* title;
+            int width;
+            int height;
             WindowEventCallbackFunction callback;
         };
 

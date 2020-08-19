@@ -14,9 +14,11 @@ namespace Kouky3d
         std::cout << error << " " << description << std::endl;
     }
 
-    Window::Window(const char* title, const int width, const int height)
-        : m_title(title), m_width(width), m_height(height)
+    Window::Window(const char* title, int width, int height)
     {
+        m_Data.title = title;
+        m_Data.width = width;
+        m_Data.height = height;
     }
 
     Window::~Window()
@@ -30,7 +32,7 @@ namespace Kouky3d
         glfwSetErrorCallback(GLFWErrorCallback);
         if(glfwInit())
         {
-            m_windowHandle = glfwCreateWindow(m_width, m_height, m_title, nullptr, nullptr);
+            m_windowHandle = glfwCreateWindow(m_Data.width, m_Data.height, m_Data.title, nullptr, nullptr);
             if(switchContext)
             {
                 GiveContext();
@@ -40,6 +42,20 @@ namespace Kouky3d
             glfwSetWindowCloseCallback(m_windowHandle, [](GLFWwindow* window) {
                 WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
                 WindowCloseEvent event;
+                data.callback(event);
+            });
+
+            glfwSetWindowSizeCallback(m_windowHandle, [](GLFWwindow* window, int width, int height) {
+                WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+                data.height = height;
+                data.width = width;
+                WindowResizeEvent event(width, height);
+                data.callback(event);
+            });
+
+            glfwSetWindowPosCallback(m_windowHandle, [](GLFWwindow* window, int xpos, int ypos) {
+                WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+                WindowMoveEvent event(xpos, ypos);
                 data.callback(event);
             });
         }
