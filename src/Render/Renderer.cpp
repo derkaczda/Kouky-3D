@@ -12,4 +12,9 @@ namespace Kouky3d
     {
         glClear(GL_COLOR_BUFFER_BIT);
     }
+
+    void Renderer::Viewport(int x, int y, int width, int height)
+    {
+        glViewport(x, y, width, height);
+    }
 }

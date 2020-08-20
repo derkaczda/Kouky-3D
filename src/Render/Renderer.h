@@ -11,6 +11,7 @@ namespace Kouky3d
 
         static void ClearColor(glm::vec4 color);
         static void Clear();
+        static void Viewport(int x, int y, int width, int height);
     };
 }
 
