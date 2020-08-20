@@ -41,7 +41,7 @@ namespace Kouky3d
 
             glfwSetWindowCloseCallback(m_windowHandle, [](GLFWwindow* window) {
                 WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-                WindowCloseEvent event;
+                WindowCloseEvent event(window);
                 data.callback(event);
             });
 
@@ -49,13 +49,13 @@ namespace Kouky3d
                 WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
                 data.height = height;
                 data.width = width;
-                WindowResizeEvent event(width, height);
+                WindowResizeEvent event(window, width, height);
                 data.callback(event);
             });
 
             glfwSetWindowPosCallback(m_windowHandle, [](GLFWwindow* window, int xpos, int ypos) {
                 WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-                WindowMoveEvent event(xpos, ypos);
+                WindowMoveEvent event(window, xpos, ypos);
                 data.callback(event);
             });
         }

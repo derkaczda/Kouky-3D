@@ -5,11 +5,26 @@
 
 namespace Kouky3d
 {
-    class WindowCloseEvent : public Event
+    class WindowEvent : public Event
+    {
+    public:
+        inline GLFWwindow* GetWindowHandle() { return m_windowHandle; }
+
+    protected:
+        WindowEvent(GLFWwindow* handle)
+        {
+            m_windowHandle = handle;
+        }
+
+    private:
+        GLFWwindow* m_windowHandle;
+    };
+
+    class WindowCloseEvent : public WindowEvent
     {
     public:
 
-        WindowCloseEvent() {}
+        WindowCloseEvent(GLFWwindow* handle) : WindowEvent(handle) { }
         ~WindowCloseEvent() {}
 
         static EventType GetStaticType()
@@ -23,11 +38,12 @@ namespace Kouky3d
         };
     };
 
-    class WindowResizeEvent : public Event
+    class WindowResizeEvent : public WindowEvent
     {
     public:
 
-        WindowResizeEvent(int width, int height): m_width(width), m_height(height) {}
+        WindowResizeEvent(GLFWwindow* handle, int width, int height) 
+            : WindowEvent(handle), m_width(width), m_height(height) {}
         ~WindowResizeEvent() {}
 
         static EventType GetStaticType()
@@ -47,11 +63,12 @@ namespace Kouky3d
         int m_width, m_height;
     };
 
-    class WindowMoveEvent : public Event
+    class WindowMoveEvent : public WindowEvent
     {
     public:
 
-        WindowMoveEvent(int xpos, int ypos) {
+        WindowMoveEvent(GLFWwindow* handle, int xpos, int ypos) 
+            : WindowEvent(handle) {
             m_position.x = xpos;
             m_position.y = ypos;
         }

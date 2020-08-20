@@ -42,6 +42,7 @@ namespace Kouky3d
 
         void GiveContext();
 
+        inline GLFWwindow* GetHandle() { return m_windowHandle; }
 
         inline bool HasContext() { return m_hasContext; }
         inline void SetCallback(const WindowEventCallbackFunction& callback) { m_Data.callback = callback; }
