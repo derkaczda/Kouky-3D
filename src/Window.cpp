@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "Event/WindowEvents.h"
+#include "Event/InputEvents.h"
 #include "Event/EventDispatcher.h"
 
 namespace Kouky3d
@@ -58,6 +59,34 @@ namespace Kouky3d
                 WindowMoveEvent event(window, xpos, ypos);
                 data.callback(event);
             });
+
+            glfwSetKeyCallback(m_windowHandle, [](GLFWwindow* window, int key, int scancode, int action, int mods)
+			{
+				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+				switch (action)
+				{
+					case GLFW_PRESS:
+					{
+						KeyDownEvent event(key);
+						data.callback(event);
+						break;
+					}
+					case GLFW_RELEASE:
+					{
+						KeyUpEvent event(key);
+						data.callback(event);
+						break;
+					}
+					case GLFW_REPEAT:
+					{
+						// KeyPressedEvent event(key, 1);
+						// data.callback(event);
+						break;
+					}
+				}
+			}
+		);
         }
     }
 

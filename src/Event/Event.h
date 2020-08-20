@@ -6,7 +6,8 @@ namespace Kouky3d
     enum EventType
     {
         None = 0,
-        WINDOW_CLOSE, WINDOW_RESIZE, WINDOW_MOVE
+        WINDOW_CLOSE, WINDOW_RESIZE, WINDOW_MOVE,
+        INPUT, KEY_DOWN, KEY_UP
     };
 
     class Event

@@ -6,6 +6,7 @@
 
 #include "../src/Event/Event.h"
 #include "../src/Event/WindowEvents.h"
+#include "../src/Event/InputEvents.h"
 #include "../src/Event/EventDispatcher.h"
 
 namespace Kouky3d
